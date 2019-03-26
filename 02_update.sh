@@ -18,5 +18,5 @@ git add ${f}
 
 git commit -m "update ${f}" 
 
-git push
+[ "${1}" == "1" ] && git push
 
