@@ -22,6 +22,5 @@ git add ${f}
 
 git commit -m "init ${f}" 
 
-git push
 
 
