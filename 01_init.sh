@@ -12,8 +12,6 @@ git fetch origin master
 
 git checkout -b develop/${yyyymmdd} origin/master
 
-git push -u origin develop/${yyyymmdd}
-
 echo "# ${yyyymmdd}" > ${f}
 
 git pull
@@ -21,6 +19,5 @@ git pull
 git add ${f}
 
 git commit -m "init ${f}" 
-
 
 
