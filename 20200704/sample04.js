@@ -13,7 +13,7 @@ async function func(funcName, timeout) {
   return funcName;
 }
 
-async function sleep(timeout) {
+function sleep(timeout) {
   return new Promise( resolve => {
     setTimeout(() => {
       resolve();
