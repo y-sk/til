@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-
 yyyymmdd=`date "+%Y%m%d"`
 
 yyyymm01=`date "+%Y%m01"`
@@ -10,7 +8,9 @@ yyyymm=`date "+%Y%m"`
 
 [ $# -eq 1 ] && yyyymm=`date -j -v-1m -f "%Y%m%d" "${yyyymm01}" "+%Y%m"`
 
-d=${yyyymm}
+yyyy=${yyyymm:0:4}
+
+d=${yyyy}/${yyyymm}
 
 branch_name=develop/move_${yyyymmdd}
 
@@ -22,7 +22,7 @@ git checkout -b ${branch_name} origin/master
 
 git push -u origin ${branch_name}
 
-[ ! -e ${d} ] && mkdir ${d}
+[ ! -e ${d} ] && mkdir -p ${d}
 
 git mv ${yyyymm}*.md ${d}
 
