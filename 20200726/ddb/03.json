@@ -1,0 +1,17 @@
+{
+  "test": [{
+    "PutRequest": {
+      "Item": {
+          "Id"  : {"N": "1"}
+        , "memo": {"S": "hoge"}
+      }
+    }
+  }, {
+    "PutRequest": {
+      "Item": {
+          "Id"  : {"N": "2"}
+        , "memo": {"S": "hogehoge"}
+      }
+    }
+  }]
+}
