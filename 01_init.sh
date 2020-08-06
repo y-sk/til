@@ -14,6 +14,8 @@ git checkout -b develop/${yyyymmdd} origin/master
 
 echo "# ${yyyymmdd}" > ${f}
 
+mkdir ${yyyymmdd}
+
 git pull
 
 git add ${f}

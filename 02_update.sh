@@ -8,15 +8,16 @@ f=${yyyymmdd}.md
 
 [ ! -e ${f} ] && echo "not found ${f}" && exit 1
 
-modified=`git status ${f} | grep modified`
+modified=`git status ${f} | grep -E "(modified|new file)"`
+[ "${modified}" != "" ] \
+&& git pull \
+&& git add ${f} \
+&& git commit -m "update ${f}"
 
-[ "${modified}" == "" ] && echo "no change ${f}" && exit 1
+modified=`git status ${yyyymmdd} | grep -E "(modified|new file)"`
+[ "${modified}" != "" ] \
+&& git pull \
+&& git add ${yyyymmdd} \
+&& git commit -m "update ${yyyymmdd}"
 
-echo ${modified}
-
-git pull
-
-git add ${f}
-
-git commit -m "update ${f}" 
 
